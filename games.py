@@ -9,24 +9,24 @@ def flip_coin(bet, choice, money):
         num = random.randint(1, 2)
         money -= bet
         if num == 1 and choice == 'Heads':
-            print('You have betted ' + str(bet) + ' on this game!\nYou now have ' + str(money) +  ' cash.\nYou picked heads!\nThe outcome was heads!') 
+            print('You have betted ' + str(bet) + ' on this game!\n' + 'You currently have ' + str(money) +  ' cash.\n\n' + 'You picked heads!\n' + 'The outcome was heads!') 
             bet *= 2
             money += bet
             print('You have won the bet! You earned ' + str(bet) + '! \n\nYou currently have ' + str(money) + ' cash.')
             return money
 
         elif num == 1 and choice == 'Tails':
-            print('You have betted ' + str(bet) + ' on this game!\nYou now have ' + str(money) +  ' cash.\nYou picked heads!\nThe outcome was tails!') 
+            print('You have betted ' + str(bet) + ' on this game!\n' + 'You currently have ' + str(money) +  ' cash.\n\n' + 'You picked heads!\n' + 'The outcome was tails!') 
             print('You lost the bet! You lost ' + str(bet) + '! \n\nYou currently have ' + str(money) + ' cash.')
             return money
         
         elif num == 2 and choice == 'Heads':
-            print('You have betted ' + str(bet) + ' on this game!\nYou now have ' + str(money) +  ' cash.\nYou picked tails!\nThe outcome was heads!') 
+            print('You have betted ' + str(bet) + ' on this game!\n' + 'You currently have ' + str(money) +  ' cash.\n\n' + 'You picked tails!\n' + 'The outcome was heads!') 
             print('You lost the bet! You lost ' + str(bet) + '! \n\nYou currently have ' + str(money) + ' cash.')
             return money
 
-        if num == 2 and choice == 'Tails':
-            print('You have betted ' + str(bet) + ' on this game!\nYou now have ' + str(money) +  ' cash.\nYou picked tails!\nThe outcome was tails!') 
+        elif num == 2 and choice == 'Tails':
+            print('You have betted ' + str(bet) + ' on this game!\n' + 'You currently have ' + str(money) +  ' cash.\n\n' + 'You picked tails!\n' + 'The outcome was heads!') 
             bet *= 2
             money += bet
             print('You have won the bet! You earned ' + str(bet) + '! \n\nYou currently have ' + str(money) + ' cash.')
