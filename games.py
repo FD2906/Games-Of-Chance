@@ -4,7 +4,7 @@ money = 100
 
 #Write your game of chance functions here
 
-def flip_coin(bet, choice, money):
+def flip_coin(bet, choice):
     if money > 0 and money >= bet:
         num = random.randint(1, 2)
         money -= bet
@@ -39,4 +39,8 @@ def flip_coin(bet, choice, money):
 #Call your game of chance functions here
 flip_coin(50, 'Heads', money)
 
-
+def cho_han(bet, choice, money):
+    if money > 0 and money >= bet:
+        num = random.randint(1, 6)
+    else:
+        print('You do not have enough cash for this bet!')
