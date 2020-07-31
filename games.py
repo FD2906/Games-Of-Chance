@@ -5,7 +5,7 @@ money = 100
 #Write your game of chance functions here
 
 def coin_flip(bet, guess): 
-    if bet < 0:
+    if bet <= 0:
         print("Your bet must be greater than zero. Please try again.\n")
 
     elif bet > money:
@@ -44,7 +44,7 @@ def cho_han(bet, guess):
     dice2 = random.randint(1, 6)
     num = (dice1 + dice2) % 2
      
-    if bet < 0:
+    if bet <= 0:
         print("Your bet must be greater than zero. Please try again.\n")
 
     elif bet > money:
@@ -83,5 +83,6 @@ def cash_check():
 
 #Call your game of chance functions here
 money += coin_flip(50, 'Heads')
+cash_check()
 money += cho_han(50, 'Odd')
 cash_check()
