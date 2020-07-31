@@ -75,6 +75,40 @@ def cho_han(bet, guess):
             print('You won the bet! You won ' + str(bet) + '!')
             return bet
         
+def card_game(bet):
+    cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    diamonds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    hearts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    spades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    deck = cards + diamonds + hearts + spades
+
+    player_1_card = random.choice(deck)
+    player_2_card = random.choice(deck)
+
+    if bet <= 0:
+        print("Your bet must be greater than zero. Please try again.\n")
+
+    elif bet > money:
+        print("You don't have that much money. Please try again.\n")
+
+    else:
+        if player_1_card > player_2_card:
+            print('You have betted ' + str(bet) + ' on this game!\n\n'+ 'Your card is ' + str(player_1_card) + '!\n' + 'The opponent\'s card is ' + str(player_2_card) + '!') 
+            bet *= 1
+            print('You won the bet! You earned ' + str(bet) + '!')
+            return bet
+        
+        elif player_1_card < player_2_card:
+            print('You have betted ' + str(bet) + ' on this game!\n\n'+ 'Your card is ' + str(player_1_card) + '!\n' + 'The opponent\'s card is ' + str(player_2_card) + '!') 
+            bet *= -1
+            print('You lost the bet! You lost ' + str(bet) + '!')
+            return bet
+        
+        elif player_1_card == player_2_card:
+            print('You have betted ' + str(bet) + ' on this game!\n\n'+ 'Your card is ' + str(player_1_card) + '!\n' + 'The opponent\'s card is ' + str(player_2_card) + '!') 
+            bet *= 0
+            print('It was a tie! You won nothing.')
+            return bet
 
 
 def cash_check():
@@ -82,7 +116,10 @@ def cash_check():
 
 
 #Call your game of chance functions here
+
 money += coin_flip(50, 'Heads')
 cash_check()
 money += cho_han(50, 'Odd')
+cash_check()
+money += card_game(50)
 cash_check()
